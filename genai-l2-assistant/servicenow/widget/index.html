@@ -1449,6 +1449,125 @@ body {
   outline: none;
 }
 
+/* Mock scenario examples */
+.mock-examples-wrap {
+  margin-bottom: 16px;
+}
+.mock-examples-note {
+  font-size: 12px;
+  color: var(--text-mid);
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+.mock-examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+.mock-example-card {
+  background: linear-gradient(180deg, rgba(17,34,54,0.95), rgba(13,27,42,0.95));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 220px;
+}
+.mock-example-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.mock-example-number {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--cyan);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.mock-example-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-hi);
+  line-height: 1.5;
+}
+.mock-example-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.mock-example-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--cyan-dim);
+  color: var(--cyan);
+  border: 1px solid rgba(0,229,255,.22);
+}
+.mock-example-tag.state-resolved {
+  background: var(--green-dim);
+  color: var(--green);
+  border-color: rgba(0,200,83,.24);
+}
+.mock-example-tag.state-active {
+  background: var(--amber-dim);
+  color: var(--amber);
+  border-color: rgba(255,179,0,.24);
+}
+.mock-example-body {
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  flex: 1;
+}
+.mock-example-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  font-size: 11px;
+}
+.mock-example-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mock-example-meta-label {
+  color: var(--text-lo);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: 10px;
+  font-weight: 700;
+}
+.mock-example-meta-value {
+  color: var(--text-hi);
+}
+.mock-example-prompt {
+  background: rgba(0,0,0,.22);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 11px;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+.mock-example-prompt strong {
+  color: var(--text-hi);
+}
+.mock-example-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+.mock-example-actions .btn {
+  justify-content: center;
+  flex: 1;
+}
+
 </style>
 </head>
 <body>
@@ -1495,6 +1614,16 @@ body {
      ═══════════════════════════════════════════════════════════════════════════ -->
 <div id="dashboardView" class="app-view active">
 <div class="main">
+
+  <div id="mockExamplesSection" class="mock-examples-wrap">
+    <div class="section-label">🧪 Mock Mode Incident Examples</div>
+    <div class="card">
+      <p class="mock-examples-note">
+        Use these curated mock scenarios to demo the AI sidebar. Each example opens a realistic incident already tuned for the mock analysis flow.
+      </p>
+      <div class="mock-examples-grid" id="mockExamplesGrid"></div>
+    </div>
+  </div>
 
   <!-- ══ SECTION 1: SLA BREACH ALERT ══ -->
   <div class="section-label">🔴 SLA Breach Monitor</div>
@@ -1765,11 +1894,21 @@ body {
      ═══════════════════════════════════════════════════════════════════════════ -->
 <div id="incidentsView" class="app-view">
   <div class="main">
+    <div id="mockConsoleExamplesSection" class="mock-examples-wrap">
+      <div class="section-label">🧪 Mock Mode Quick Picks</div>
+      <div class="card">
+        <p class="mock-examples-note">
+          Need a fast demo path? Pick one of these mock incidents to jump straight into analysis from the incident console.
+        </p>
+        <div class="mock-examples-grid" id="mockConsoleExamplesGrid"></div>
+      </div>
+    </div>
     <div class="section-label">📋 All Incidents Directory</div>
     <div class="card" style="margin-bottom: 20px;">
       <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;">
         <div style="flex: 1; min-width: 250px; position: relative;">
-          <input type="text" id="incidentsSearch" class="form-input" style="width: 100%; padding-left: 36px; background-image: url('data:image/svg+xml,%3Csvg width=\'16\' height=\'16\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%237EA8C4\' stroke-width=\'2\' stroke-linecap=\''round\' stroke-linejoin=\'round\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'11\' cy=\'11\' r=\'8\'%2F%3E%3Cline x1=\'21\' y1=\'21\' x2=\'16.65\' y2=\'16.65\'%2F%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: 12px center;" placeholder="Search by incident number, title, or CI..." oninput="filterIncidentsTable()">
+          <label for="incidentsSearch" class="hidden">Search incidents</label>
+          <input type="text" id="incidentsSearch" class="form-input" style="width: 100%;" placeholder="Search by incident number, title, or CI..." oninput="filterIncidentsTable()">
         </div>
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
           <div class="form-group" style="min-width: 120px;">
@@ -2068,6 +2207,33 @@ const INCIDENTS = [
 ];
 
 const STATIC_INCIDENTS = JSON.parse(JSON.stringify(INCIDENTS));
+
+const MOCK_SCENARIOS = [
+  {
+    number: 'INC0050001',
+    label: 'Best for app outage demos',
+    summary: 'Critical payment outage with 502s, strong confidence, and clear rollback-style triage steps.',
+    starterPrompt: 'Ask: “What should I check first?”'
+  },
+  {
+    number: 'INC0050004',
+    label: 'Best for identity incidents',
+    summary: 'SSO login failure scenario that is good for showing authentication impact, confidence scoring, and escalation thinking.',
+    starterPrompt: 'Ask: “Should this be escalated to L3?”'
+  },
+  {
+    number: 'INC0050007',
+    label: 'Best for low-confidence AI demos',
+    summary: 'CrashLoopBackOff case intentionally set to lower confidence so the warning banner and escalation guidance are visible.',
+    starterPrompt: 'Ask: “Why is confidence low here?”'
+  },
+  {
+    number: 'INC0050010',
+    label: 'Best for access / IAM examples',
+    summary: 'Service-account permission revocation case that demonstrates authorization failures and historical pattern-based remediation.',
+    starterPrompt: 'Ask: “Show similar incidents.”'
+  }
+];
 
 // -- MOCK DATA FOR AI SIDEBAR (per-incident) ----------------------------------
 const MOCK_ANALYSIS = {};
@@ -2747,6 +2913,92 @@ function getAgeMinutes(openedStr) {
   const now = new Date();
   const diffMs = now - opened;
   return Math.max(0, Math.floor(diffMs / 60000));
+}
+
+function renderMockScenarioExamples() {
+  const dashboardSection = document.getElementById('mockExamplesSection');
+  const consoleSection = document.getElementById('mockConsoleExamplesSection');
+  const dashboardGrid = document.getElementById('mockExamplesGrid');
+  const consoleGrid = document.getElementById('mockConsoleExamplesGrid');
+
+  if (!dashboardSection || !consoleSection || !dashboardGrid || !consoleGrid) return;
+
+  dashboardSection.classList.toggle('hidden', !mockMode);
+  consoleSection.classList.toggle('hidden', !mockMode);
+
+  if (!mockMode) {
+    dashboardGrid.innerHTML = '';
+    consoleGrid.innerHTML = '';
+    return;
+  }
+
+  const createCardMarkup = (scenario, inc) => {
+    const isResolved = inc.state === '6' || inc.state === '7' || inc.state === 'resolved' || inc.state === 'closed';
+    const stateLabel = isResolved ? 'Resolved history' : 'Active incident';
+    const priorityLabel = `P${inc.priority}`;
+
+    return `
+      <div class="mock-example-card">
+        <div class="mock-example-top">
+          <div>
+            <div class="mock-example-number">${escapeHtml(inc.number)}</div>
+            <div class="mock-example-title">${escapeHtml(inc.title)}</div>
+          </div>
+          <div class="mock-example-badges">
+            <span class="mock-example-tag">${escapeHtml(priorityLabel)}</span>
+          </div>
+        </div>
+
+        <div class="mock-example-badges">
+          <span class="mock-example-tag ${isResolved ? 'state-resolved' : 'state-active'}">${escapeHtml(stateLabel)}</span>
+          <span class="mock-example-tag">${escapeHtml(scenario.label)}</span>
+        </div>
+
+        <div class="mock-example-body">${escapeHtml(scenario.summary)}</div>
+
+        <div class="mock-example-meta">
+          <div class="mock-example-meta-item">
+            <span class="mock-example-meta-label">Application</span>
+            <span class="mock-example-meta-value">${escapeHtml(inc.app)}</span>
+          </div>
+          <div class="mock-example-meta-item">
+            <span class="mock-example-meta-label">CI</span>
+            <span class="mock-example-meta-value">${escapeHtml(inc.cmdb_ci)}</span>
+          </div>
+          <div class="mock-example-meta-item">
+            <span class="mock-example-meta-label">Category</span>
+            <span class="mock-example-meta-value">${escapeHtml(inc.category)}</span>
+          </div>
+          <div class="mock-example-meta-item">
+            <span class="mock-example-meta-label">Root Cause Pattern</span>
+            <span class="mock-example-meta-value">${escapeHtml(inc.rootCauseShort)}</span>
+          </div>
+        </div>
+
+        <div class="mock-example-prompt"><strong>Suggested prompt:</strong> ${escapeHtml(scenario.starterPrompt)}</div>
+
+        <div class="mock-example-actions">
+          <button class="btn btn--primary" onclick="openMockScenario('${escapeAttr(inc.number)}')">Open example</button>
+        </div>
+      </div>`;
+  };
+
+  const html = MOCK_SCENARIOS.map(scenario => {
+    const inc = INCIDENTS.find(item => item.number === scenario.number);
+    return inc ? createCardMarkup(scenario, inc) : '';
+  }).join('');
+
+  dashboardGrid.innerHTML = html;
+  consoleGrid.innerHTML = html;
+}
+
+function openMockScenario(incidentNumber) {
+  const incident = INCIDENTS.find(item => item.number === incidentNumber);
+  if (!incident) {
+    showToast('Scenario not found in the current dataset.');
+    return;
+  }
+  navigateToAnalysis(incident);
 }
 
 // ===============================================================================
@@ -3462,7 +3714,9 @@ function updateDashboard() {
   const slaCompliance = resolvedCount > 0 ? Math.round((compliantCount / resolvedCount) * 100) : 100;
   
   const approvalRate = feedbacks.length > 0 ? Math.round((feedbacks.filter(r => r === 5).length / feedbacks.length) * 100) : 78;
-  
+
+  renderMockScenarioExamples();
+
   document.getElementById('kpiTotal').textContent = total;
   document.getElementById('kpiOpen').textContent = openCount;
   document.getElementById('kpiResolved').textContent = resolvedCount;
