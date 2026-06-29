@@ -1,0 +1,3772 @@
+[
+    {
+        "incident_id": "INC1001",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 122,
+        "created_date": "2026-03-24T20:43:52.523724",
+        "resolved_date": "2026-03-24T22:45:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.92,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1002",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 56,
+        "created_date": "2026-03-29T22:43:52.523724",
+        "resolved_date": "2026-03-29T23:39:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.91,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1003",
+        "title": "Session Storage Cache Overflow",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 159,
+        "created_date": "2026-03-24T20:43:52.523724",
+        "resolved_date": "2026-03-24T23:22:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.9,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1004",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 229,
+        "created_date": "2026-03-25T22:43:52.523724",
+        "resolved_date": "2026-03-26T02:32:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.86,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1005",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Closed",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 291,
+        "created_date": "2026-03-25T02:43:52.523724",
+        "resolved_date": "2026-03-25T07:34:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.78,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1006",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Disk Space Full",
+        "mttr_minutes": 246,
+        "created_date": "2026-03-29T22:43:52.523724",
+        "resolved_date": "2026-03-30T02:49:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.94,
+            "root_cause_predicted": "Disk Space Full"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1007",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 1376,
+        "created_date": "2026-03-23T16:43:52.523724",
+        "resolved_date": "2026-03-24T15:39:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.92,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1008",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 1226,
+        "created_date": "2026-03-26T11:43:52.523724",
+        "resolved_date": "2026-03-27T08:09:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.89,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1009",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 1119,
+        "created_date": "2026-04-06T04:43:52.523724",
+        "resolved_date": "2026-04-06T23:22:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.81,
+            "root_cause_predicted": "Disk Space Full"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1010",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 32,
+        "created_date": "2026-03-31T18:43:52.523724",
+        "resolved_date": "2026-03-31T19:15:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1011",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 1149,
+        "created_date": "2026-04-03T02:43:52.523724",
+        "resolved_date": "2026-04-03T21:52:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.76,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1012",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Disk Space Full",
+        "mttr_minutes": 253,
+        "created_date": "2026-04-05T14:43:52.523724",
+        "resolved_date": "2026-04-05T18:56:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.74,
+            "root_cause_predicted": "Disk Space Full"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1013",
+        "title": "Redis Cluster Cache Overflow",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 1598,
+        "created_date": "2026-03-31T00:43:52.523724",
+        "resolved_date": "2026-04-01T03:21:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.93,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1014",
+        "title": "MFA Token Mismatch Validation Loop",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P4",
+        "status": "Closed",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 631,
+        "created_date": "2026-04-02T02:43:52.523724",
+        "resolved_date": "2026-04-02T13:14:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.93,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1015",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 176,
+        "created_date": "2026-04-02T16:43:52.523724",
+        "resolved_date": "2026-04-02T19:39:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.9,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1016",
+        "title": "Transaction Processing Timeout",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 222,
+        "created_date": "2026-03-31T19:43:52.523724",
+        "resolved_date": "2026-03-31T23:25:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.68,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1017",
+        "title": "Edge Gateway Timeout",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 356,
+        "created_date": "2026-04-01T02:43:52.523724",
+        "resolved_date": "2026-04-01T08:39:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.94,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1018",
+        "title": "Edge Gateway Timeout",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 934,
+        "created_date": "2026-04-11T14:43:52.523724",
+        "resolved_date": "2026-04-12T06:17:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.66,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1019",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 231,
+        "created_date": "2026-04-11T04:43:52.523724",
+        "resolved_date": "2026-04-11T08:34:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.74,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1020",
+        "title": "Edge Gateway Timeout",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P2",
+        "status": "Closed",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 160,
+        "created_date": "2026-04-09T09:43:52.523724",
+        "resolved_date": "2026-04-09T12:23:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.86,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1021",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P1",
+        "status": "Closed",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 66,
+        "created_date": "2026-04-12T14:43:52.523724",
+        "resolved_date": "2026-04-12T15:49:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.71,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1022",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 1566,
+        "created_date": "2026-04-13T06:43:52.523724",
+        "resolved_date": "2026-04-14T08:49:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.73,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1023",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Disk Space Full",
+        "mttr_minutes": 1113,
+        "created_date": "2026-04-07T00:43:52.523724",
+        "resolved_date": "2026-04-07T19:16:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.77,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1024",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 244,
+        "created_date": "2026-04-10T16:43:52.523724",
+        "resolved_date": "2026-04-10T20:47:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.83,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1025",
+        "title": "SSO Login Failure - SAML token invalid",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 317,
+        "created_date": "2026-04-11T01:43:52.523724",
+        "resolved_date": "2026-04-11T07:00:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.73,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1026",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P2",
+        "status": "Closed",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 240,
+        "created_date": "2026-04-07T18:43:52.523724",
+        "resolved_date": "2026-04-07T22:43:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1027",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 726,
+        "created_date": "2026-04-09T07:43:52.523724",
+        "resolved_date": "2026-04-09T19:49:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.84,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1028",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 681,
+        "created_date": "2026-04-10T16:43:52.523724",
+        "resolved_date": "2026-04-11T04:04:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1029",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 860,
+        "created_date": "2026-04-08T02:43:52.523724",
+        "resolved_date": "2026-04-08T17:03:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.91,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1030",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 651,
+        "created_date": "2026-04-12T21:43:52.523724",
+        "resolved_date": "2026-04-13T08:34:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.83,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1031",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 1472,
+        "created_date": "2026-04-17T09:43:52.523724",
+        "resolved_date": "2026-04-18T10:15:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.66,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1032",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 144,
+        "created_date": "2026-04-18T20:43:52.523724",
+        "resolved_date": "2026-04-18T23:07:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.83,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1033",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 965,
+        "created_date": "2026-04-13T19:43:52.523724",
+        "resolved_date": "2026-04-14T11:48:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.73,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1034",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 1552,
+        "created_date": "2026-04-15T01:43:52.523724",
+        "resolved_date": "2026-04-16T03:35:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1035",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 795,
+        "created_date": "2026-04-19T03:43:52.523724",
+        "resolved_date": "2026-04-19T16:58:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.7,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1036",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "Certificate Expired",
+        "mttr_minutes": 33,
+        "created_date": "2026-04-18T18:43:52.523724",
+        "resolved_date": "2026-04-18T19:16:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.78,
+            "root_cause_predicted": "Certificate Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1037",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Closed",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 129,
+        "created_date": "2026-04-20T04:43:52.523724",
+        "resolved_date": "2026-04-20T06:52:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.82,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1038",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 65,
+        "created_date": "2026-04-20T09:43:52.523724",
+        "resolved_date": "2026-04-20T10:48:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.82,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1039",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 536,
+        "created_date": "2026-04-14T06:43:52.523724",
+        "resolved_date": "2026-04-14T15:39:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.82,
+            "root_cause_predicted": "Disk Space Full"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1040",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 554,
+        "created_date": "2026-04-16T08:43:52.523724",
+        "resolved_date": "2026-04-16T17:57:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.86,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1041",
+        "title": "SSO Login Failure - SAML token invalid",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 1595,
+        "created_date": "2026-04-18T01:43:52.523724",
+        "resolved_date": "2026-04-19T04:18:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.92,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1042",
+        "title": "SSO Login Failure - SAML token invalid",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Certificate Expired",
+        "mttr_minutes": 203,
+        "created_date": "2026-04-19T09:43:52.523724",
+        "resolved_date": "2026-04-19T13:06:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.9,
+            "root_cause_predicted": "Certificate Expired"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1043",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 894,
+        "created_date": "2026-04-14T14:43:52.523724",
+        "resolved_date": "2026-04-15T05:37:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.9,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1044",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 977,
+        "created_date": "2026-04-18T05:43:52.523724",
+        "resolved_date": "2026-04-18T22:00:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.73,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1045",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 1535,
+        "created_date": "2026-04-23T22:43:52.523724",
+        "resolved_date": "2026-04-25T00:18:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.83,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1046",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 1227,
+        "created_date": "2026-04-25T02:43:52.523724",
+        "resolved_date": "2026-04-25T23:10:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.94,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1047",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 1164,
+        "created_date": "2026-04-26T10:43:52.523724",
+        "resolved_date": "2026-04-27T06:07:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.86,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1048",
+        "title": "Session Storage Cache Overflow",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P4",
+        "status": "Closed",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 685,
+        "created_date": "2026-04-23T07:43:52.523724",
+        "resolved_date": "2026-04-23T19:08:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.67,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1049",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P2",
+        "status": "Closed",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 225,
+        "created_date": "2026-04-24T09:43:52.523724",
+        "resolved_date": "2026-04-24T13:28:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.65,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1050",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 1314,
+        "created_date": "2026-04-22T12:43:52.523724",
+        "resolved_date": "2026-04-23T10:37:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.93,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1051",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 1197,
+        "created_date": "2026-04-22T04:43:52.523724",
+        "resolved_date": "2026-04-23T00:40:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1052",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 1378,
+        "created_date": "2026-04-20T20:43:52.523724",
+        "resolved_date": "2026-04-21T19:41:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.78,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1053",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 465,
+        "created_date": "2026-04-22T16:43:52.523724",
+        "resolved_date": "2026-04-23T00:28:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1054",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 69,
+        "created_date": "2026-04-24T00:43:52.523724",
+        "resolved_date": "2026-04-24T01:52:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.91,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1055",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 1259,
+        "created_date": "2026-04-26T07:43:52.523724",
+        "resolved_date": "2026-04-27T04:42:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.85,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1056",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 826,
+        "created_date": "2026-04-23T01:43:52.523724",
+        "resolved_date": "2026-04-23T15:29:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1057",
+        "title": "Edge Gateway Timeout",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 1283,
+        "created_date": "2026-04-21T07:43:52.523724",
+        "resolved_date": "2026-04-22T05:06:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.77,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1058",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "Disk Space Full",
+        "mttr_minutes": 59,
+        "created_date": "2026-05-02T23:43:52.523724",
+        "resolved_date": "2026-05-03T00:42:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.92,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1059",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 979,
+        "created_date": "2026-04-29T10:43:52.523724",
+        "resolved_date": "2026-04-30T03:02:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.78,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1060",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 293,
+        "created_date": "2026-04-29T21:43:52.523724",
+        "resolved_date": "2026-04-30T02:36:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.77,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1061",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 318,
+        "created_date": "2026-04-28T16:43:52.523724",
+        "resolved_date": "2026-04-28T22:01:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.94,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1062",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Certificate Expired",
+        "mttr_minutes": 906,
+        "created_date": "2026-05-02T06:43:52.523724",
+        "resolved_date": "2026-05-02T21:49:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.85,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1063",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 797,
+        "created_date": "2026-05-02T04:43:52.523724",
+        "resolved_date": "2026-05-02T18:00:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1064",
+        "title": "Session Storage Cache Overflow",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 25,
+        "created_date": "2026-04-28T04:43:52.523724",
+        "resolved_date": "2026-04-28T05:08:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.79,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1065",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 1381,
+        "created_date": "2026-04-28T09:43:52.523724",
+        "resolved_date": "2026-04-29T08:44:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.65,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1066",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 1418,
+        "created_date": "2026-05-03T07:43:52.523724",
+        "resolved_date": "2026-05-04T07:21:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1067",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 777,
+        "created_date": "2026-04-29T16:43:52.523724",
+        "resolved_date": "2026-04-30T05:40:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1068",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 442,
+        "created_date": "2026-05-04T02:43:52.523724",
+        "resolved_date": "2026-05-04T10:05:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.9,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1069",
+        "title": "SSO Login Failure - SAML token invalid",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 1303,
+        "created_date": "2026-04-28T05:43:52.523724",
+        "resolved_date": "2026-04-29T03:26:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.76,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1070",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 261,
+        "created_date": "2026-04-28T01:43:52.523724",
+        "resolved_date": "2026-04-28T06:04:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.67,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1071",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 593,
+        "created_date": "2026-05-02T08:43:52.523724",
+        "resolved_date": "2026-05-02T18:36:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.71,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1072",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 1493,
+        "created_date": "2026-04-30T07:43:52.523724",
+        "resolved_date": "2026-05-01T08:36:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.76,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1073",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 888,
+        "created_date": "2026-05-08T17:43:52.523724",
+        "resolved_date": "2026-05-09T08:31:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.67,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1074",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 610,
+        "created_date": "2026-05-10T07:43:52.523724",
+        "resolved_date": "2026-05-10T17:53:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.83,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1075",
+        "title": "Transaction Processing Timeout",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 1160,
+        "created_date": "2026-05-10T07:43:52.523724",
+        "resolved_date": "2026-05-11T03:03:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.66,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1076",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 1599,
+        "created_date": "2026-05-07T01:43:52.523724",
+        "resolved_date": "2026-05-08T04:22:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.71,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1077",
+        "title": "Redis Cluster Cache Overflow",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 1597,
+        "created_date": "2026-05-06T16:43:52.523724",
+        "resolved_date": "2026-05-07T19:20:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.93,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1078",
+        "title": "Transaction Processing Timeout",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 153,
+        "created_date": "2026-05-06T04:43:52.523724",
+        "resolved_date": "2026-05-06T07:16:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.94,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1079",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 1138,
+        "created_date": "2026-05-08T02:43:52.523724",
+        "resolved_date": "2026-05-08T21:41:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.76,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1080",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 178,
+        "created_date": "2026-05-09T07:43:52.523724",
+        "resolved_date": "2026-05-09T10:41:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.66,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1081",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 961,
+        "created_date": "2026-05-05T06:43:52.523724",
+        "resolved_date": "2026-05-05T22:44:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.86,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1082",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 409,
+        "created_date": "2026-05-10T03:43:52.523724",
+        "resolved_date": "2026-05-10T10:32:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1083",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 182,
+        "created_date": "2026-05-11T02:43:52.523724",
+        "resolved_date": "2026-05-11T05:45:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1084",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 69,
+        "created_date": "2026-05-10T04:43:52.523724",
+        "resolved_date": "2026-05-10T05:52:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.91,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1085",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 269,
+        "created_date": "2026-05-09T19:43:52.523724",
+        "resolved_date": "2026-05-10T00:12:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.71,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1086",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 1348,
+        "created_date": "2026-05-08T19:43:52.523724",
+        "resolved_date": "2026-05-09T18:11:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.91,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1087",
+        "title": "Session Storage Cache Overflow",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 964,
+        "created_date": "2026-05-09T13:43:52.523724",
+        "resolved_date": "2026-05-10T05:47:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.91,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1088",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 1396,
+        "created_date": "2026-05-10T22:43:52.523724",
+        "resolved_date": "2026-05-11T21:59:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1089",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Disk Space Full",
+        "mttr_minutes": 1479,
+        "created_date": "2026-05-11T17:43:52.523724",
+        "resolved_date": "2026-05-12T18:22:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.73,
+            "root_cause_predicted": "Disk Space Full"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1090",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 1295,
+        "created_date": "2026-05-14T16:43:52.523724",
+        "resolved_date": "2026-05-15T14:18:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.76,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1091",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 132,
+        "created_date": "2026-05-14T06:43:52.523724",
+        "resolved_date": "2026-05-14T08:55:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.69,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1092",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 268,
+        "created_date": "2026-05-13T19:43:52.523724",
+        "resolved_date": "2026-05-14T00:11:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1093",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 141,
+        "created_date": "2026-05-12T05:43:52.523724",
+        "resolved_date": "2026-05-12T08:04:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1094",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Disk Space Full",
+        "mttr_minutes": 177,
+        "created_date": "2026-05-18T09:43:52.523724",
+        "resolved_date": "2026-05-18T12:40:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.84,
+            "root_cause_predicted": "Disk Space Full"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1095",
+        "title": "MFA Token Mismatch Validation Loop",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 974,
+        "created_date": "2026-05-17T16:43:52.523724",
+        "resolved_date": "2026-05-18T08:57:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.67,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1096",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P4",
+        "status": "Closed",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 536,
+        "created_date": "2026-05-13T22:43:52.523724",
+        "resolved_date": "2026-05-14T07:39:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.92,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1097",
+        "title": "Redis Cluster Cache Overflow",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 624,
+        "created_date": "2026-05-11T23:43:52.523724",
+        "resolved_date": "2026-05-12T10:07:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1098",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 755,
+        "created_date": "2026-05-13T14:43:52.523724",
+        "resolved_date": "2026-05-14T03:18:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1099",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Certificate Expired",
+        "mttr_minutes": 846,
+        "created_date": "2026-05-15T07:43:52.523724",
+        "resolved_date": "2026-05-15T21:49:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.89,
+            "root_cause_predicted": "Certificate Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1100",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 26,
+        "created_date": "2026-05-15T02:43:52.523724",
+        "resolved_date": "2026-05-15T03:09:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.8,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1101",
+        "title": "SSO Login Failure - SAML token invalid",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Certificate Expired",
+        "mttr_minutes": 163,
+        "created_date": "2026-05-12T16:43:52.523724",
+        "resolved_date": "2026-05-12T19:26:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.85,
+            "root_cause_predicted": "Certificate Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1102",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 1372,
+        "created_date": "2026-05-16T21:43:52.523724",
+        "resolved_date": "2026-05-17T20:35:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.92,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1103",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Disk Space Full",
+        "mttr_minutes": 398,
+        "created_date": "2026-05-15T09:43:52.523724",
+        "resolved_date": "2026-05-15T16:21:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.69,
+            "root_cause_predicted": "Disk Space Full"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1104",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 812,
+        "created_date": "2026-05-16T17:43:52.523724",
+        "resolved_date": "2026-05-17T07:15:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.84,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1105",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 372,
+        "created_date": "2026-05-19T22:43:52.523724",
+        "resolved_date": "2026-05-20T04:55:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.84,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1106",
+        "title": "Transaction Processing Timeout",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 822,
+        "created_date": "2026-05-24T06:43:52.523724",
+        "resolved_date": "2026-05-24T20:25:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.82,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1107",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 233,
+        "created_date": "2026-05-18T16:43:52.523724",
+        "resolved_date": "2026-05-18T20:36:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.85,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1108",
+        "title": "Transaction Processing Timeout",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 359,
+        "created_date": "2026-05-21T20:43:52.523724",
+        "resolved_date": "2026-05-22T02:42:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.77,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1109",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 779,
+        "created_date": "2026-05-25T03:43:52.523724",
+        "resolved_date": "2026-05-25T16:42:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.78,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1110",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 260,
+        "created_date": "2026-05-19T07:43:52.523724",
+        "resolved_date": "2026-05-19T12:03:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.71,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1111",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 175,
+        "created_date": "2026-05-20T09:43:52.523724",
+        "resolved_date": "2026-05-20T12:38:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.67,
+            "root_cause_predicted": "Disk Space Full"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1112",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 501,
+        "created_date": "2026-05-18T16:43:52.523724",
+        "resolved_date": "2026-05-19T01:04:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.95,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1113",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 70,
+        "created_date": "2026-05-22T17:43:52.523724",
+        "resolved_date": "2026-05-22T18:53:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1114",
+        "title": "SSO Login Failure - SAML token invalid",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 486,
+        "created_date": "2026-05-22T22:43:52.523724",
+        "resolved_date": "2026-05-23T06:49:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.74,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1115",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 1196,
+        "created_date": "2026-05-24T20:43:52.523724",
+        "resolved_date": "2026-05-25T16:39:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.84,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1116",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P4",
+        "status": "Closed",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 602,
+        "created_date": "2026-05-23T03:43:52.523724",
+        "resolved_date": "2026-05-23T13:45:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.77,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1117",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 665,
+        "created_date": "2026-05-24T09:43:52.523724",
+        "resolved_date": "2026-05-24T20:48:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.81,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1118",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 1082,
+        "created_date": "2026-05-19T03:43:52.523724",
+        "resolved_date": "2026-05-19T21:45:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.65,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1119",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 137,
+        "created_date": "2026-05-21T14:43:52.523724",
+        "resolved_date": "2026-05-21T17:00:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.76,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1120",
+        "title": "Transaction Processing Timeout",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 579,
+        "created_date": "2026-05-22T22:43:52.523724",
+        "resolved_date": "2026-05-23T08:22:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.8,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1121",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 357,
+        "created_date": "2026-05-30T14:43:52.523724",
+        "resolved_date": "2026-05-30T20:40:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1122",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 992,
+        "created_date": "2026-05-29T08:43:52.523724",
+        "resolved_date": "2026-05-30T01:15:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.78,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1123",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 1364,
+        "created_date": "2026-05-29T14:43:52.523724",
+        "resolved_date": "2026-05-30T13:27:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.9,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1124",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Disk Space Full",
+        "mttr_minutes": 905,
+        "created_date": "2026-05-31T11:43:52.523724",
+        "resolved_date": "2026-06-01T02:48:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.93,
+            "root_cause_predicted": "Disk Space Full"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1125",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 767,
+        "created_date": "2026-05-31T20:43:52.523724",
+        "resolved_date": "2026-06-01T09:30:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.73,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1126",
+        "title": "Edge Gateway Timeout",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 1435,
+        "created_date": "2026-05-27T02:43:52.523724",
+        "resolved_date": "2026-05-28T02:38:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.7,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1127",
+        "title": "Edge Gateway Timeout",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 743,
+        "created_date": "2026-05-30T14:43:52.523724",
+        "resolved_date": "2026-05-31T03:06:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.76,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1128",
+        "title": "Redis Cluster Cache Overflow",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 273,
+        "created_date": "2026-05-26T09:43:52.523724",
+        "resolved_date": "2026-05-26T14:16:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.69,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1129",
+        "title": "Transaction Processing Timeout",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 203,
+        "created_date": "2026-06-01T13:43:52.523724",
+        "resolved_date": "2026-06-01T17:06:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.65,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1130",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 438,
+        "created_date": "2026-05-28T09:43:52.523724",
+        "resolved_date": "2026-05-28T17:01:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1131",
+        "title": "Redis Cluster Cache Overflow",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 278,
+        "created_date": "2026-05-27T17:43:52.523724",
+        "resolved_date": "2026-05-27T22:21:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1132",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 567,
+        "created_date": "2026-05-29T05:43:52.523724",
+        "resolved_date": "2026-05-29T15:10:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.68,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1133",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 246,
+        "created_date": "2026-05-31T11:43:52.523724",
+        "resolved_date": "2026-05-31T15:49:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1134",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 288,
+        "created_date": "2026-05-31T21:43:52.523724",
+        "resolved_date": "2026-06-01T02:31:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "Disk Space Full"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1135",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 317,
+        "created_date": "2026-05-29T05:43:52.523724",
+        "resolved_date": "2026-05-29T11:00:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.66,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1136",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 290,
+        "created_date": "2026-05-27T05:43:52.523724",
+        "resolved_date": "2026-05-27T10:33:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.89,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1137",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 596,
+        "created_date": "2026-05-31T18:43:52.523724",
+        "resolved_date": "2026-06-01T04:39:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.74,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1138",
+        "title": "Redis Cluster Cache Overflow",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 1546,
+        "created_date": "2026-06-01T07:43:52.523724",
+        "resolved_date": "2026-06-02T09:29:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.66,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1139",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Disk Space Full",
+        "mttr_minutes": 321,
+        "created_date": "2026-06-01T01:43:52.523724",
+        "resolved_date": "2026-06-01T07:04:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.7,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1140",
+        "title": "Session Storage Cache Overflow",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 970,
+        "created_date": "2026-05-25T19:43:52.523724",
+        "resolved_date": "2026-05-26T11:53:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.74,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1141",
+        "title": "MFA Token Mismatch Validation Loop",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 980,
+        "created_date": "2026-05-26T17:43:52.523724",
+        "resolved_date": "2026-05-27T10:03:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.89,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1142",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 1408,
+        "created_date": "2026-06-05T23:43:52.523724",
+        "resolved_date": "2026-06-06T23:11:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.79,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1143",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 489,
+        "created_date": "2026-06-04T14:43:52.523724",
+        "resolved_date": "2026-06-04T22:52:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.77,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1144",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 128,
+        "created_date": "2026-06-03T01:43:52.523724",
+        "resolved_date": "2026-06-03T03:51:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1145",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 259,
+        "created_date": "2026-06-02T13:43:52.523724",
+        "resolved_date": "2026-06-02T18:02:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.78,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1146",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 506,
+        "created_date": "2026-06-06T08:43:52.523724",
+        "resolved_date": "2026-06-06T17:09:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1147",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 1600,
+        "created_date": "2026-06-02T14:43:52.523724",
+        "resolved_date": "2026-06-03T17:23:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.83,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1148",
+        "title": "Edge Gateway Timeout",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 217,
+        "created_date": "2026-06-05T07:43:52.523724",
+        "resolved_date": "2026-06-05T11:20:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.76,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1149",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 484,
+        "created_date": "2026-06-08T02:43:52.523724",
+        "resolved_date": "2026-06-08T10:47:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.77,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1150",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 972,
+        "created_date": "2026-06-05T21:43:52.523724",
+        "resolved_date": "2026-06-06T13:55:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.85,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1151",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 274,
+        "created_date": "2026-06-04T03:43:52.523724",
+        "resolved_date": "2026-06-04T08:17:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1152",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 1156,
+        "created_date": "2026-06-02T08:43:52.523724",
+        "resolved_date": "2026-06-03T03:59:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1153",
+        "title": "Session Storage Cache Overflow",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 682,
+        "created_date": "2026-06-07T09:43:52.523724",
+        "resolved_date": "2026-06-07T21:05:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.76,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1154",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 191,
+        "created_date": "2026-06-07T17:43:52.523724",
+        "resolved_date": "2026-06-07T20:54:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.69,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1155",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "Certificate Expired",
+        "mttr_minutes": 1567,
+        "created_date": "2026-06-06T02:43:52.523724",
+        "resolved_date": "2026-06-07T04:50:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.82,
+            "root_cause_predicted": "Certificate Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1156",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P2",
+        "status": "Closed",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 174,
+        "created_date": "2026-06-06T21:43:52.523724",
+        "resolved_date": "2026-06-07T00:37:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1157",
+        "title": "Session Storage Cache Overflow",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 124,
+        "created_date": "2026-06-04T02:43:52.523724",
+        "resolved_date": "2026-06-04T04:47:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.89,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1158",
+        "title": "MFA Token Mismatch Validation Loop",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Certificate Expired",
+        "mttr_minutes": 483,
+        "created_date": "2026-06-06T04:43:52.523724",
+        "resolved_date": "2026-06-06T12:46:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.9,
+            "root_cause_predicted": "Certificate Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1159",
+        "title": "MFA Token Mismatch Validation Loop",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 956,
+        "created_date": "2026-06-04T22:43:52.523724",
+        "resolved_date": "2026-06-05T14:39:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1160",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P4",
+        "status": "Closed",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 1154,
+        "created_date": "2026-06-07T08:43:52.523724",
+        "resolved_date": "2026-06-08T03:57:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1161",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 1156,
+        "created_date": "2026-06-06T12:43:52.523724",
+        "resolved_date": "2026-06-07T07:59:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1162",
+        "title": "SSO Login Failure - SAML token invalid",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 1091,
+        "created_date": "2026-06-03T14:43:52.523724",
+        "resolved_date": "2026-06-04T08:54:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.94,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1163",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 1003,
+        "created_date": "2026-06-12T21:43:52.523724",
+        "resolved_date": "2026-06-13T14:26:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.73,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1164",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 994,
+        "created_date": "2026-06-14T08:43:52.523724",
+        "resolved_date": "2026-06-15T01:17:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.85,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1165",
+        "title": "Edge Gateway Timeout",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P1",
+        "status": "Closed",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 58,
+        "created_date": "2026-06-14T04:43:52.523724",
+        "resolved_date": "2026-06-14T05:41:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1166",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P4",
+        "status": "Closed",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 897,
+        "created_date": "2026-06-14T21:43:52.523724",
+        "resolved_date": "2026-06-15T12:40:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.78,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1167",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 380,
+        "created_date": "2026-06-13T01:43:52.523724",
+        "resolved_date": "2026-06-13T08:03:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.69,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1168",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 441,
+        "created_date": "2026-06-10T21:43:52.523724",
+        "resolved_date": "2026-06-11T05:04:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.74,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1169",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 26,
+        "created_date": "2026-06-10T06:43:52.523724",
+        "resolved_date": "2026-06-10T07:09:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.69,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1170",
+        "title": "Redis Cluster Cache Overflow",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P2",
+        "status": "Closed",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 184,
+        "created_date": "2026-06-09T21:43:52.523724",
+        "resolved_date": "2026-06-10T00:47:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1171",
+        "title": "MFA Token Mismatch Validation Loop",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 1452,
+        "created_date": "2026-06-14T01:43:52.523724",
+        "resolved_date": "2026-06-15T01:55:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1172",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Closed",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 142,
+        "created_date": "2026-06-15T09:43:52.523724",
+        "resolved_date": "2026-06-15T12:05:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1173",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 621,
+        "created_date": "2026-06-09T18:43:52.523724",
+        "resolved_date": "2026-06-10T05:04:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.89,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1174",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 1198,
+        "created_date": "2026-06-11T20:43:52.523724",
+        "resolved_date": "2026-06-12T16:41:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.77,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1175",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Closed",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 200,
+        "created_date": "2026-06-15T07:43:52.523724",
+        "resolved_date": "2026-06-15T11:03:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.86,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1176",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 240,
+        "created_date": "2026-06-14T01:43:52.523724",
+        "resolved_date": "2026-06-14T05:43:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.67,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1177",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 312,
+        "created_date": "2026-06-14T05:43:52.523724",
+        "resolved_date": "2026-06-14T10:55:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.66,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1178",
+        "title": "MFA Token Mismatch Validation Loop",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 226,
+        "created_date": "2026-06-11T07:43:52.523724",
+        "resolved_date": "2026-06-11T11:29:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.94,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1179",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Closed",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 138,
+        "created_date": "2026-06-09T11:43:52.523724",
+        "resolved_date": "2026-06-09T14:01:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1180",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P1",
+        "status": "Closed",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 61,
+        "created_date": "2026-06-09T18:43:52.523724",
+        "resolved_date": "2026-06-09T19:44:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1181",
+        "title": "Edge Gateway Timeout",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 665,
+        "created_date": "2026-06-10T17:43:52.523724",
+        "resolved_date": "2026-06-11T04:48:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.67,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1182",
+        "title": "Edge Gateway Timeout",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 300,
+        "created_date": "2026-06-09T12:43:52.523724",
+        "resolved_date": "2026-06-09T17:43:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.91,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1183",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 1548,
+        "created_date": "2026-06-08T17:43:52.523724",
+        "resolved_date": "2026-06-09T19:31:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.69,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1184",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 57,
+        "created_date": "2026-06-19T07:43:52.523724",
+        "resolved_date": "2026-06-19T08:40:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.79,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1185",
+        "title": "Transaction Processing Timeout",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 1305,
+        "created_date": "2026-06-22T13:43:52.523724",
+        "resolved_date": "2026-06-23T11:28:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.94,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1186",
+        "title": "Redis Cluster Cache Overflow",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P1",
+        "status": "Closed",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 60,
+        "created_date": "2026-06-17T16:43:52.523724",
+        "resolved_date": "2026-06-17T17:43:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.66,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1187",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 297,
+        "created_date": "2026-06-19T14:43:52.523724",
+        "resolved_date": "2026-06-19T19:40:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.85,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1188",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 66,
+        "created_date": "2026-06-15T17:43:52.523724",
+        "resolved_date": "2026-06-15T18:49:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.65,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1189",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 541,
+        "created_date": "2026-06-19T08:43:52.523724",
+        "resolved_date": "2026-06-19T17:44:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1190",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "Disk Space Full",
+        "mttr_minutes": 51,
+        "created_date": "2026-06-21T01:43:52.523724",
+        "resolved_date": "2026-06-21T02:34:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "Disk Space Full"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1191",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Certificate Expired",
+        "mttr_minutes": 227,
+        "created_date": "2026-06-16T03:43:52.523724",
+        "resolved_date": "2026-06-16T07:30:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.69,
+            "root_cause_predicted": "Certificate Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1192",
+        "title": "SSO Login Failure - SAML token invalid",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 985,
+        "created_date": "2026-06-18T13:43:52.523724",
+        "resolved_date": "2026-06-19T06:08:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.84,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1193",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 986,
+        "created_date": "2026-06-16T02:43:52.523724",
+        "resolved_date": "2026-06-16T19:09:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1194",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 1255,
+        "created_date": "2026-06-19T16:43:52.523724",
+        "resolved_date": "2026-06-20T13:38:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.82,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1195",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 203,
+        "created_date": "2026-06-20T00:43:52.523724",
+        "resolved_date": "2026-06-20T04:06:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.65,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1196",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 1103,
+        "created_date": "2026-06-21T07:43:52.523724",
+        "resolved_date": "2026-06-22T02:06:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.8,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1197",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 893,
+        "created_date": "2026-06-21T09:43:52.523724",
+        "resolved_date": "2026-06-22T00:36:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.8,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1198",
+        "title": "Mass Active Directory Account Lockout",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 566,
+        "created_date": "2026-06-16T16:43:52.523724",
+        "resolved_date": "2026-06-17T02:09:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.84,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1199",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 867,
+        "created_date": "2026-06-18T00:43:52.523724",
+        "resolved_date": "2026-06-18T15:10:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.89,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1200",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 776,
+        "created_date": "2026-06-19T16:43:52.523724",
+        "resolved_date": "2026-06-20T05:39:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.67,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1201",
+        "title": "Portal Dashboard Memory Leak",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 1123,
+        "created_date": "2026-06-20T00:43:52.523724",
+        "resolved_date": "2026-06-20T19:26:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1202",
+        "title": "Transaction Processing Timeout",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 1312,
+        "created_date": "2026-06-21T02:43:52.523724",
+        "resolved_date": "2026-06-22T00:35:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.7,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1203",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 818,
+        "created_date": "2026-06-18T17:43:52.523724",
+        "resolved_date": "2026-06-19T07:21:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1204",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 57,
+        "created_date": "2026-06-22T08:43:52.523724",
+        "resolved_date": "2026-06-22T09:40:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.93,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1205",
+        "title": "Session Storage Cache Overflow",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "Password Expired",
+        "mttr_minutes": 801,
+        "created_date": "2026-06-21T11:43:52.523724",
+        "resolved_date": "2026-06-22T01:04:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.89,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1206",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 1028,
+        "created_date": "2026-06-17T08:43:52.523724",
+        "resolved_date": "2026-06-18T01:51:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.91,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1207",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P4",
+        "status": "Closed",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 921,
+        "created_date": "2026-06-24T19:43:52.523724",
+        "resolved_date": "2026-06-25T11:04:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.94,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1208",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 289,
+        "created_date": "2026-06-28T13:43:52.523724",
+        "resolved_date": "2026-06-28T18:32:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.79,
+            "root_cause_predicted": "Password Expired"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1209",
+        "title": "Edge Gateway Timeout",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 269,
+        "created_date": "2026-06-22T16:43:52.523724",
+        "resolved_date": "2026-06-22T21:12:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1210",
+        "title": "Connection Pool Exhaustion Alert",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 598,
+        "created_date": "2026-06-28T01:43:52.523724",
+        "resolved_date": "2026-06-28T11:41:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1211",
+        "title": "Transaction Processing Timeout",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P1",
+        "status": "Closed",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 23,
+        "created_date": "2026-06-27T18:43:52.523724",
+        "resolved_date": "2026-06-27T19:06:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "Network Latency"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1212",
+        "title": "Redis Cluster Cache Overflow",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Cache Overflow",
+        "mttr_minutes": 831,
+        "created_date": "2026-06-26T03:43:52.523724",
+        "resolved_date": "2026-06-26T17:34:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.7,
+            "root_cause_predicted": "Cache Overflow"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1213",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 470,
+        "created_date": "2026-06-24T05:43:52.523724",
+        "resolved_date": "2026-06-24T13:33:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1214",
+        "title": "MFA Token Mismatch Validation Loop",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "Certificate Expired",
+        "mttr_minutes": 56,
+        "created_date": "2026-06-24T18:43:52.523724",
+        "resolved_date": "2026-06-24T19:39:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.7,
+            "root_cause_predicted": "Certificate Expired"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1215",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "Network Latency",
+        "mttr_minutes": 1023,
+        "created_date": "2026-06-28T13:43:52.523724",
+        "resolved_date": "2026-06-29T06:46:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.71,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1216",
+        "title": "SSO Login Failure - SAML token invalid",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 165,
+        "created_date": "2026-06-29T11:43:52.523724",
+        "resolved_date": "2026-06-29T14:28:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "Time drift on authenticator app"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1217",
+        "title": "SSO Login Failure - SAML token invalid",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 690,
+        "created_date": "2026-06-24T12:43:52.523724",
+        "resolved_date": "2026-06-25T00:13:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "Certificate Expired"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1218",
+        "title": "SSO Login Failure - SAML token invalid",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P1",
+        "status": "Resolved",
+        "root_cause": "LDAP Failure",
+        "mttr_minutes": 22,
+        "created_date": "2026-06-22T19:43:52.523724",
+        "resolved_date": "2026-06-22T20:05:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.94,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1219",
+        "title": "Redis Cluster Cache Overflow",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 862,
+        "created_date": "2026-06-24T20:43:52.523724",
+        "resolved_date": "2026-06-25T11:05:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.87,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1220",
+        "title": "MFA Token Mismatch Validation Loop",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "Time drift on authenticator app",
+        "mttr_minutes": 814,
+        "created_date": "2026-06-23T18:43:52.523724",
+        "resolved_date": "2026-06-24T08:17:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.7,
+            "root_cause_predicted": "LDAP Failure"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1221",
+        "title": "Network Route Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P2",
+        "status": "Closed",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 209,
+        "created_date": "2026-06-28T17:43:52.523724",
+        "resolved_date": "2026-06-28T21:12:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.68,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Incorrect Recommendation"
+    },
+    {
+        "incident_id": "INC1222",
+        "title": "SMS Gateway HTTP Timeout",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 1133,
+        "created_date": "2026-06-25T00:43:52.523724",
+        "resolved_date": "2026-06-25T19:36:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.82,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1223",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 1512,
+        "created_date": "2026-06-24T20:43:52.523724",
+        "resolved_date": "2026-06-25T21:55:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.9,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1224",
+        "title": "Gateway Gateway Latency Spike",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 575,
+        "created_date": "2026-06-24T19:43:52.523724",
+        "resolved_date": "2026-06-25T05:18:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.68,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1225",
+        "title": "Session Storage Cache Overflow",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P3",
+        "status": "Closed",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 710,
+        "created_date": "2026-06-27T05:43:52.523724",
+        "resolved_date": "2026-06-27T17:33:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.81,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1226",
+        "title": "Worker Queue Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 786,
+        "created_date": "2026-06-28T22:43:52.523724",
+        "resolved_date": "2026-06-29T11:49:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.86,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1227",
+        "title": "Redis Cluster Cache Overflow",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P4",
+        "status": "Resolved",
+        "root_cause": "API Timeout",
+        "mttr_minutes": 927,
+        "created_date": "2026-06-23T06:43:52.523724",
+        "resolved_date": "2026-06-23T22:10:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.88,
+            "root_cause_predicted": "API Timeout"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1228",
+        "title": "SSPR Portal Redirection Sync Failure",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P2",
+        "status": "Resolved",
+        "root_cause": "Memory Leak",
+        "mttr_minutes": 248,
+        "created_date": "2026-06-23T14:43:52.523724",
+        "resolved_date": "2026-06-23T18:51:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.71,
+            "root_cause_predicted": "Memory Leak"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1229",
+        "title": "Production Instance Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P3",
+        "status": "Resolved",
+        "root_cause": "DB Pool Exhaustion",
+        "mttr_minutes": 340,
+        "created_date": "2026-06-24T21:43:52.523724",
+        "resolved_date": "2026-06-25T03:23:52.523724",
+        "ai_resolution": {
+            "confidence_score": 0.85,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": "Resolution Worked"
+    },
+    {
+        "incident_id": "INC1042",
+        "title": "Payment Gateway \u2013 DB Pool Exhaustion",
+        "application": "\ud83c\udfe6 Payment Gateway",
+        "priority": "P1",
+        "status": "In Progress",
+        "root_cause": null,
+        "mttr_minutes": null,
+        "created_date": "2026-06-29T14:25:52.523724",
+        "resolved_date": null,
+        "ai_resolution": {
+            "confidence_score": 0.72,
+            "root_cause_predicted": "DB Pool Exhaustion"
+        },
+        "feedback": null
+    },
+    {
+        "incident_id": "INC1156",
+        "title": "Identity Service \u2013 Certificate Expired",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P1",
+        "status": "In Progress",
+        "root_cause": null,
+        "mttr_minutes": null,
+        "created_date": "2026-06-29T15:09:52.523724",
+        "resolved_date": null,
+        "ai_resolution": {
+            "confidence_score": 0.9,
+            "root_cause_predicted": "Anomaly Detected"
+        },
+        "feedback": null
+    },
+    {
+        "incident_id": "INC1178",
+        "title": "API Gateway \u2013 Network Latency Spike",
+        "application": "\ud83c\udf10 API Gateway",
+        "priority": "P1",
+        "status": "Open",
+        "root_cause": null,
+        "mttr_minutes": null,
+        "created_date": "2026-06-29T15:21:52.523724",
+        "resolved_date": null,
+        "ai_resolution": {
+            "confidence_score": 0.9,
+            "root_cause_predicted": "Anomaly Detected"
+        },
+        "feedback": null
+    },
+    {
+        "incident_id": "INC1181",
+        "title": "Customer Portal \u2013 Cache Overflow",
+        "application": "\ud83d\udc64 Customer Portal",
+        "priority": "P1",
+        "status": "Open",
+        "root_cause": null,
+        "mttr_minutes": null,
+        "created_date": "2026-06-29T15:32:52.523724",
+        "resolved_date": null,
+        "ai_resolution": {
+            "confidence_score": 0.75,
+            "root_cause_predicted": "Anomaly Detected"
+        },
+        "feedback": null
+    },
+    {
+        "incident_id": "INC1184",
+        "title": "Database Service \u2013 Disk Space Full",
+        "application": "\ud83d\uddc4 Database Service",
+        "priority": "P1",
+        "status": "Open",
+        "root_cause": null,
+        "mttr_minutes": null,
+        "created_date": "2026-06-29T15:39:52.523724",
+        "resolved_date": null,
+        "ai_resolution": {
+            "confidence_score": 0.83,
+            "root_cause_predicted": "Anomaly Detected"
+        },
+        "feedback": null
+    },
+    {
+        "incident_id": "INC1230",
+        "title": "Customer Portal \u2013 LDAP Failure",
+        "application": "\ud83d\udd10 Identity Service",
+        "priority": "P2",
+        "status": "Open",
+        "root_cause": null,
+        "mttr_minutes": null,
+        "created_date": "2026-06-29T10:31:52.523724",
+        "resolved_date": null,
+        "ai_resolution": null,
+        "feedback": null
+    },
+    {
+        "incident_id": "INC1231",
+        "title": "Notification Service \u2013 Memory Leak",
+        "application": "\ud83d\udd14 Notification Service",
+        "priority": "P3",
+        "status": "Open",
+        "root_cause": null,
+        "mttr_minutes": null,
+        "created_date": "2026-06-28T12:03:52.523724",
+        "resolved_date": null,
+        "ai_resolution": null,
+        "feedback": null
+    }
+]
