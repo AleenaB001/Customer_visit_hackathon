@@ -160,47 +160,122 @@ def _recommendation_db_to_result(rec: RecommendationDB) -> RecommendationResult:
     "",
     response_model=list[IncidentListItem],
     summary="List all incidents with their latest AI recommendation status",
-    description="Returns a list of all incidents in the database combined with their AI analysis status.",
+    description=(
+        "Fetches incidents from ServiceNow (or the mock client in dev mode), "
+        "syncs them to the local database, then returns the list ordered from "
+        "latest to oldest (by opened_at DESC) combined with their AI analysis status."
+    ),
 )
 async def list_incidents() -> list[IncidentListItem]:
-    """Retrieve all incidents with their latest AI recommendation status.
+    """Retrieve incidents from ServiceNow sorted latest to oldest.
 
-    Uses an outer join to combine IncidentDB with the latest RecommendationDB.
+    Steps:
+    1. Fetch incidents from ServiceNow using list_incidents (opened_at DESC).
+    2. Upsert each record into the local database.
+    3. For each synced incident, retrieve the latest recommendation from the DB.
+    4. Return the combined list preserving the ServiceNow ordering.
     """
     from sqlalchemy import func
-    
+
+    from app.config import get_settings
+    from app.ingestion.mock_client import MockServiceNowClient
+    from app.ingestion.pipeline import store_incident_record
+    from app.ingestion.servicenow_client import ServiceNowClient
+    from app.models.incident import IncidentQueryParams, SortField, SortOrder
+
+    settings = get_settings()
+    use_mock = not settings.servicenow.username and not settings.servicenow.client_id
+
+    snow_client_cls = MockServiceNowClient if use_mock else ServiceNowClient
+
+    log = logger.bind(source="mock" if use_mock else "servicenow")
+    log.info("list_incidents_fetching", client=snow_client_cls.__name__)
+
+    # ── Step 1: Fetch from ServiceNow (latest to oldest) ────────────────────
+    try:
+        async with snow_client_cls() as snow_client:  # type: ignore[call-arg]
+            snow_records = await snow_client.list_incidents(
+                IncidentQueryParams(
+                    sort_by=SortField.OPENED_AT,
+                    sort_order=SortOrder.DESC,
+                    limit=200,
+                )
+            )
+        log.info("list_incidents_fetched", count=len(snow_records))
+    except Exception:
+        log.error("list_incidents_fetch_failed", exc_info=True)
+        snow_records = []
+
+    # ── Step 2: Sync records into the local database ─────────────────────────
     async for session in get_db_session():
-        # Subquery to identify the latest recommendation created_at timestamp per incident
+        synced_incident_ids: list = []
+
+        for record in snow_records:
+            try:
+                inc_db = await store_incident_record(record, session=session)
+                await session.flush()
+                synced_incident_ids.append(inc_db.snow_sys_id)
+            except Exception:
+                log.warning("incident_sync_failed", snow_sys_id=record.sys_id, exc_info=True)
+
+        await session.commit()
+
+        # ── Step 3: Build response preserving ServiceNow order ───────────────
+        # Map snow_sys_id → IncidentDB row for all synced incidents
+        if synced_incident_ids:
+            from sqlalchemy import text
+
+            inc_stmt = select(IncidentDB).where(
+                IncidentDB.snow_sys_id.in_(synced_incident_ids)
+            )
+            inc_result = await session.execute(inc_stmt)
+            inc_by_sys_id = {row.snow_sys_id: row for row in inc_result.scalars().all()}
+        else:
+            inc_by_sys_id = {}
+
+        # Subquery to get max created_at per incident (latest recommendation)
         subq = (
             select(
                 RecommendationDB.incident_id,
-                func.max(RecommendationDB.created_at).label("max_created_at")
+                func.max(RecommendationDB.created_at).label("max_created_at"),
             )
             .group_by(RecommendationDB.incident_id)
             .subquery()
         )
-        
-        # Main query joining incidents with the latest recommendation
-        stmt = (
-            select(IncidentDB, RecommendationDB)
-            .outerjoin(subq, IncidentDB.id == subq.c.incident_id)
-            .outerjoin(
-                RecommendationDB,
-                (IncidentDB.id == RecommendationDB.incident_id) & 
-                (RecommendationDB.created_at == subq.c.max_created_at)
+
+        # For all synced incidents, left-join with latest recommendation
+        if inc_by_sys_id:
+            all_inc_ids = [inc.id for inc in inc_by_sys_id.values()]
+            rec_stmt = (
+                select(IncidentDB, RecommendationDB)
+                .where(IncidentDB.id.in_(all_inc_ids))
+                .outerjoin(subq, IncidentDB.id == subq.c.incident_id)
+                .outerjoin(
+                    RecommendationDB,
+                    (IncidentDB.id == RecommendationDB.incident_id)
+                    & (RecommendationDB.created_at == subq.c.max_created_at),
+                )
             )
-            .order_by(IncidentDB.number.asc())
-        )
-        
-        db_result = await session.execute(stmt)
-        rows = db_result.all()
-        
-        items = []
-        for inc_db, rec_db in rows:
+            db_result = await session.execute(rec_stmt)
+            rec_by_sys_id = {
+                inc_db.snow_sys_id: (inc_db, rec_db)
+                for inc_db, rec_db in db_result.all()
+            }
+        else:
+            rec_by_sys_id = {}
+
+        # ── Step 4: Build items in ServiceNow order (opened_at DESC) ─────────
+        items: list[IncidentListItem] = []
+        for record in snow_records:
+            pair = rec_by_sys_id.get(record.sys_id)
+            if pair is None:
+                continue
+            inc_db, rec_db = pair
+
             ai_status = "not_analyzed"
             ai_confidence = None
             rec_id = None
-            
+
             if rec_db:
                 rec_id = rec_db.id
                 ai_confidence = rec_db.confidence_score
@@ -208,7 +283,7 @@ async def list_incidents() -> list[IncidentListItem]:
                     ai_status = "analyzed"
                 else:
                     ai_status = "low_confidence"
-            
+
             items.append(
                 IncidentListItem(
                     id=inc_db.id,
@@ -226,7 +301,10 @@ async def list_incidents() -> list[IncidentListItem]:
                     recommendation_id=rec_id,
                 )
             )
+
+        log.info("list_incidents_complete", count=len(items))
         return items
+
     return []
 
 

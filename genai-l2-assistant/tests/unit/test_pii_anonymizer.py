@@ -205,7 +205,7 @@ class TestCloudKeyPattern:
 
     def test_openai_api_key(self) -> None:
         """OpenAI-style API keys should be masked."""
-        text = "Set OPENAI_API_KEY=sk-abc123def456ghi789jkl012mno345pqr678 in .env"
+        text = "Set OPENAI_API_KEY=sk-abc123def456ghi789jkl012mno345pqr678 in .env.example"
         masked = mask_pii(text)
 
         assert "sk-abc123def456ghi789jkl012mno345pqr678" not in masked

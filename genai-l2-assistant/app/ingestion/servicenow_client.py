@@ -372,32 +372,19 @@ class ServiceNowClient:
             offset=params.offset,
         )
 
-        # Build ServiceNow encoded query
-        query_parts: list[str] = []
-        if params.state:
-            if "," in params.state:
-                query_parts.append(f"stateIN{params.state}")
-            else:
-                query_parts.append(f"state={params.state}")
-        if params.assignment_group:
-            query_parts.append(f"assignment_group.name={params.assignment_group}")
-        if params.category:
-            query_parts.append(f"category={params.category}")
-        if params.opened_at_start:
-            dt_str = params.opened_at_start.strftime("%Y-%m-%d %H:%M:%S")
-            query_parts.append(f"opened_at>={dt_str}")
-        if params.opened_at_end:
-            dt_str = params.opened_at_end.strftime("%Y-%m-%d %H:%M:%S")
-            query_parts.append(f"opened_at<={dt_str}")
+        # Build ServiceNow encoded query using the model's canonical serialiser.
+        # to_snow_query() emits all filter clauses AND the ORDER BY directive
+        # (e.g. ORDERBYDESCopened_at), ensuring ServiceNow returns results in the
+        # requested order rather than undefined insertion order.
+        snow_query = params.to_snow_query()
 
         api_params: dict[str, Any] = {
             "sysparm_limit": params.limit,
             "sysparm_offset": params.offset,
             "sysparm_display_value": "true",
             "sysparm_exclude_reference_link": "true",
+            "sysparm_query": snow_query,
         }
-        if query_parts:
-            api_params["sysparm_query"] = "^".join(query_parts)
 
         data = await self._request(
             "GET",

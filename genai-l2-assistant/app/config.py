@@ -1,7 +1,7 @@
 """Application configuration using pydantic-settings.
 
 All settings are loaded from environment variables with sensible defaults
-for local development. In production, configure via .env file or
+for local development. In production, configure via .env.example file or
 container environment variables.
 """
 
@@ -10,7 +10,7 @@ from functools import lru_cache
 from typing import Optional
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+# Load environment variables from .env.example file
 load_dotenv()
 
 from pydantic import Field, field_validator
@@ -239,7 +239,7 @@ class AppSettings(BaseSettings):
         settings.database.postgres_url  # connection string
     """
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=".env.example",
         env_file_encoding="utf-8",
         extra="ignore",
     )

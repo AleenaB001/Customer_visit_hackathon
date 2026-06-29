@@ -13,7 +13,7 @@ services:
       - ./app:/app/app  # Hot reload
       - ./scripts:/app/scripts
     env_file:
-      - .env
+      - .env.example
     depends_on:
       postgres:
         condition: service_healthy
@@ -72,7 +72,7 @@ services:
     volumes:
       - ./app:/app/app
     env_file:
-      - .env
+      - .env.example
     depends_on:
       postgres:
         condition: service_healthy
@@ -92,7 +92,7 @@ services:
     volumes:
       - ./app:/app/app
     env_file:
-      - .env
+      - .env.example
     depends_on:
       redis:
         condition: service_healthy
