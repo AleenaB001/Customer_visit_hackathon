@@ -1,10 +1,10 @@
 import os
 import chromadb
+import httpx
 
-from google import genai
+from openai import OpenAI
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from backend.config import PROJECT_ID, LOCATION
 from backend.service_now import (
     get_kb_articles,
     get_resolved_incidents
@@ -12,26 +12,24 @@ from backend.service_now import (
 from .utils import clean_html
 
 # ============================================================
-# Google Credentials
+# OpenAI-Compatible Client (Internal Endpoint)
 # ============================================================
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+http_client = httpx.Client(verify=False)
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(
-    BASE_DIR,
-    "sa.json"
+client = OpenAI(
+    base_url="https://genailab.tcs.in",
+    api_key="sk-Xnp0YZBIyM-bn3hobXm8EA",
+    http_client=http_client
 )
 
-client = genai.Client(
-    vertexai=True,
-    project=PROJECT_ID,
-    location=LOCATION,
-)
+EMBEDDING_MODEL = "azure/genailab-maas-text-embedding-3-large"
 
 # ============================================================
 # ChromaDB
 # ============================================================
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "chroma_db")
 
 chroma_client = chromadb.PersistentClient(path=DB_PATH)
@@ -52,12 +50,12 @@ except:
 
 def get_embedding(text):
 
-    response = client.models.embed_content(
-        model="text-embedding-005",
-        contents=text
+    response = client.embeddings.create(
+        model=EMBEDDING_MODEL,
+        input=text
     )
 
-    return response.embeddings[0].values
+    return response.data[0].embedding
 
 
 # ============================================================
@@ -86,10 +84,10 @@ Content:
         if body.strip():
 
             docs.append({
-            "id": article["number"],
-            "text": body,
-            "title": article.get("short_description", "")
-})
+                "id": article["number"],
+                "text": body,
+                "title": article.get("short_description", "")
+            })
 
     return docs
 
@@ -135,12 +133,12 @@ Assignment Group:
         if body.strip():
 
             docs.append({
-            "id": inc["number"],
-            "text": body,
-            "short_description": inc.get("short_description", ""),
-            "category": inc.get("category", ""),
-            "priority": inc.get("priority", "")
-        })
+                "id": inc["number"],
+                "text": body,
+                "short_description": inc.get("short_description", ""),
+                "category": inc.get("category", ""),
+                "priority": inc.get("priority", "")
+            })
 
     return docs
 
@@ -165,22 +163,14 @@ def chunk_documents(documents):
         for i, piece in enumerate(pieces):
 
             chunks.append({
-
-            "id": f"{doc['id']}_{i}",
-
-            "text": piece,
-
-            "source_id": doc["id"],
-
-            "title": doc.get("title", ""),
-
-            "short_description": doc.get("short_description", ""),
-
-            "category": doc.get("category", ""),
-
-            "priority": doc.get("priority", "")
-
-        })
+                "id": f"{doc['id']}_{i}",
+                "text": piece,
+                "source_id": doc["id"],
+                "title": doc.get("title", ""),
+                "short_description": doc.get("short_description", ""),
+                "category": doc.get("category", ""),
+                "priority": doc.get("priority", "")
+            })
 
     return chunks
 
@@ -192,13 +182,10 @@ def chunk_documents(documents):
 def build_vector_store():
 
     if kb_collection.count() > 0:
-
         print("KB Vector Store already exists.")
-
         return
 
     docs = load_kb()
-
     chunks = chunk_documents(docs)
 
     print(f"Loaded {len(docs)} KB Articles")
@@ -209,20 +196,13 @@ def build_vector_store():
         embedding = get_embedding(chunk["text"])
 
         kb_collection.add(
-
             ids=[chunk["id"]],
-
             documents=[chunk["text"]],
-
             embeddings=[embedding],
-
-            metadatas=[
-            {
+            metadatas=[{
                 "kb": chunk["source_id"],
                 "title": chunk["title"]
-            }
-]
-
+            }]
         )
 
     print("KB Vector Store Created")
@@ -235,13 +215,10 @@ def build_vector_store():
 def build_incident_vector_store():
 
     if incident_collection.count() > 0:
-
         print("Incident Vector Store already exists.")
-
         return
 
     docs = load_incidents()
-
     chunks = chunk_documents(docs)
 
     print(f"Loaded {len(docs)} Incidents")
@@ -252,22 +229,15 @@ def build_incident_vector_store():
         embedding = get_embedding(chunk["text"])
 
         incident_collection.add(
-
             ids=[chunk["id"]],
-
             documents=[chunk["text"]],
-
             embeddings=[embedding],
-
-            metadatas=[
-    {
-        "incident": chunk["source_id"],
-        "short_description": chunk["short_description"],
-        "category": chunk["category"],
-        "priority": chunk["priority"]
-    }
-]
-
+            metadatas=[{
+                "incident": chunk["source_id"],
+                "short_description": chunk["short_description"],
+                "category": chunk["category"],
+                "priority": chunk["priority"]
+            }]
         )
 
     print("Incident Vector Store Created")
@@ -282,11 +252,8 @@ def search_kb(query, top_k=3):
     embedding = get_embedding(query)
 
     return kb_collection.query(
-
         query_embeddings=[embedding],
-
         n_results=top_k
-
     )
 
 
@@ -299,11 +266,8 @@ def search_incidents(query, top_k=3):
     embedding = get_embedding(query)
 
     return incident_collection.query(
-
         query_embeddings=[embedding],
-
         n_results=top_k
-
     )
 
 
@@ -314,9 +278,6 @@ def search_incidents(query, top_k=3):
 def search(query, top_k=3):
 
     return {
-
         "kb": search_kb(query, top_k),
-
         "incidents": search_incidents(query, top_k)
-
     }

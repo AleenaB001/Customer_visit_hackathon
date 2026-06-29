@@ -1,32 +1,47 @@
 import os
 import json
 import re
+import httpx
+from openai import OpenAI
 
-from google import genai
-
-from backend.config import PROJECT_ID, LOCATION
 from backend.vector_store import search
 
+http_client = httpx.Client(verify=False)
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(
-    BASE_DIR,
-    "sa.json"
+client = OpenAI(
+    base_url="https://genailab.tcs.in",
+    api_key="sk-Xnp0YZBIyM-bn3hobXm8EA",
+    http_client=http_client
 )
 
-client = genai.Client(
-    vertexai=True,
-    project=PROJECT_ID,
-    location=LOCATION,
-)
 
+# ============================================================
+# Format retrieved chunks with similarity scores
+# ============================================================
+
+def format_chunks(results):
+    chunks = []
+
+    documents = results.get("documents", [[]])[0]
+    distances = results.get("distances", [[]])[0]
+    metadatas = results.get("metadatas", [[]])[0]
+
+    for doc, distance, meta in zip(documents, distances, metadatas):
+        similarity = round((1 - distance) * 100, 1)
+        chunks.append({
+            "text":  doc,
+            "score": similarity,
+            "meta":  meta
+        })
+
+    return chunks
+
+
+# ============================================================
+# Generate Resolution
+# ============================================================
 
 def generate_resolution(incident):
-    """
-    Generates AI analysis for an incident using
-    relevant KB chunks from ChromaDB.
-    """
 
     query = f"""
 Category:
@@ -39,16 +54,14 @@ Description:
 {incident['description']}
 """
 
-    # Retrieve relevant KB chunks
     results = search(query, top_k=3)
 
-    kb_chunks = "\n\n".join(
-        results["kb"]["documents"][0]
-    )
+    kb_chunks       = "\n\n".join(results["kb"]["documents"][0])
+    incident_chunks = "\n\n".join(results["incidents"]["documents"][0])
 
-    incident_chunks = "\n\n".join(
-        results["incidents"]["documents"][0]
-    )
+    # Format BEFORE sending to LLM
+    kb_formatted        = format_chunks(results["kb"])
+    incident_formatted  = format_chunks(results["incidents"])
 
     prompt = f"""
 You are an expert IT Service Desk Engineer.
@@ -105,8 +118,6 @@ use them only to strengthen the recommendation.
 
 Return ONLY valid JSON.
 
-
-
 {{
     "summary":"",
     "root_cause":"",
@@ -115,13 +126,13 @@ Return ONLY valid JSON.
         "action",
         "action"
     ],
-    
     "kb_used":[
         "KB0010004"
     ],
     "escalation":"Yes or No",
     "confidence":95
 }}
+
 Rules
 
 1. Knowledge Base is the primary source of truth.
@@ -133,46 +144,36 @@ Rules
 7. Return one troubleshooting action per element in resolution_steps.
 8. Keep each troubleshooting action concise (maximum 2–3 sentences).
 9. Populate kb_used with the KB numbers actually referenced.
-10. Populate kb_used with the KB numbers actually referenced.
-11. Confidence must be an integer between 0 and 100.
-12. Return ONLY valid JSON.
-13. Do NOT return markdown.
-14. Do NOT include explanations outside the JSON.
-15. Confidence must be an integer between 0 and 100.
-
+10. Confidence must be an integer between 0 and 100.
+11. Return ONLY valid JSON.
+12. Do NOT return markdown.
+13. Do NOT include explanations outside the JSON.
 """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
+    response = client.chat.completions.create(
+        model="gemini-2.5-pro",
+        messages=[{"role": "user", "content": prompt}]
     )
 
-    text = response.text.strip()
-
-    # Remove markdown if Gemini returns ```json
+    text = response.choices[0].message.content.strip()
     text = re.sub(r"^```json", "", text)
     text = re.sub(r"```$", "", text)
     text = text.strip()
 
     try:
         response_json = json.loads(text)
-
-        response_json["retrieved_incidents"] = results["incidents"]
-
-        response_json["retrieved_kb"] = results["kb"]
-
+        response_json["retrieved_kb"]        = kb_formatted        # ✅
+        response_json["retrieved_incidents"] = incident_formatted   # ✅
         return response_json
 
     except Exception:
-
-        # Safe fallback
         return {
-    "summary": text,
-    "root_cause": "Unknown",
-    "resolution_steps": [],
-    "escalation": "Unknown",
-    "confidence": 0,
-    "kb_used": [],
-    "retrieved_incidents": results["incidents"],
-    "retrieved_kb": results["kb"]
-}
+            "summary":              text,
+            "root_cause":           "Unknown",
+            "resolution_steps":     [],
+            "escalation":           "Unknown",
+            "confidence":           0,
+            "kb_used":              [],
+            "retrieved_kb":         kb_formatted,        # ✅
+            "retrieved_incidents":  incident_formatted   # ✅
+        }

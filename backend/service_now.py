@@ -4,6 +4,10 @@ from datetime import datetime, timedelta, timezone
 
 from backend.config import SN_INSTANCE, SN_USERNAME, SN_PASSWORD
 
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 HEADERS = {
     "Accept": "application/json",
     "Content-Type": "application/json"
@@ -48,7 +52,8 @@ def get_latest_incident():
     response = requests.get(
         url,
         headers=HEADERS,
-        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD)
+        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD),
+        verify=False
     )
 
     response.raise_for_status()
@@ -107,7 +112,8 @@ def get_new_incidents(since_minutes: int = 1) -> list[dict]:
     response = requests.get(
         url,
         headers=HEADERS,
-        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD)
+        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD),
+        verify=False
     )
 
     response.raise_for_status()
@@ -146,7 +152,8 @@ def get_all_incidents(limit=20):
     response = requests.get(
         url,
         headers=HEADERS,
-        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD)
+        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD),
+        verify=False
     )
 
     response.raise_for_status()
@@ -181,7 +188,8 @@ def get_kb_articles(limit=100):
     response = requests.get(
         url,
         headers=HEADERS,
-        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD)
+        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD),
+        verify=False
     )
 
     response.raise_for_status()
@@ -220,7 +228,8 @@ def get_kb_by_number(kb_number):
     response = requests.get(
         url,
         headers=HEADERS,
-        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD)
+        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD),
+        verify=False
     )
 
     response.raise_for_status()
@@ -259,7 +268,8 @@ def get_similar_incidents(incident: dict, limit: int = 5) -> list[dict]:
     response = requests.get(
         url,
         headers=HEADERS,
-        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD)
+        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD),
+        verify=False
     )
 
     response.raise_for_status()
@@ -297,7 +307,8 @@ def get_resolved_incidents(limit=500):
     response = requests.get(
         url,
         headers=HEADERS,
-        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD)
+        auth=HTTPBasicAuth(SN_USERNAME, SN_PASSWORD),
+        verify=False
     )
 
     response.raise_for_status()

@@ -1,32 +1,37 @@
 import streamlit as st
 import pandas as pd
 
-def kb_card(kb_articles):
+def kb_card(retrieved_kb: list):
 
     with st.container(border=True):
 
-        st.subheader("📚 KB Articles")
+        st.subheader("📚 KB Articles — Retrieved Chunks")
 
-        df = pd.DataFrame({
+        if not retrieved_kb:
+            st.info("No KB chunks retrieved.")
+            return
 
-            "KB":[
-                "KB001",
-                "KB024",
-                "KB105"
-            ],
+        rows = []
 
-            "Title":[
-                "USB Device Not Recognized",
-                "USB Driver Installation",
-                "Hardware Diagnostics"
-            ],
+        for i, chunk in enumerate(retrieved_kb, start=1):
+            meta  = chunk.get("meta", {})
+            kb_no = meta.get("kb", "—")
+            title = meta.get("title", "—")
+            score = chunk.get("score", 0)
+            text  = chunk.get("text", "")
 
-            "Match":[
-                "98%",
-                "92%",
-                "81%"
-            ]
+            preview = text[:120] + "..." if len(text) > 120 else text
 
-        })
+            rows.append({
+                "#":       i,
+                "KB":      kb_no,
+                "Title":   title,
+                "Preview": preview,
+                "Score":   f"{score}%"
+            })
+
+        df = pd.DataFrame(rows)
 
         st.dataframe(df, use_container_width=True, hide_index=True)
+
+        

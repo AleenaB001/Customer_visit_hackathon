@@ -80,48 +80,17 @@ except Exception as e:
         "resolution_steps": [],
         "confidence": 0,
         "escalation": "",
-        "kb_used": []
+        "kb_used": [],
+        "retrieved_kb": [],
+        "retrieved_incidents": []
     }
 
 # ==========================================================
-# KB Articles (Semantic Search Results)
+# Retrieved Chunks (already formatted by gemini_services)
 # ==========================================================
 
-retrieved_kb = ai_response.get("retrieved_kb", {})
-
-kb_articles = []
-
-if retrieved_kb:
-
-    for meta in retrieved_kb["metadatas"][0]:
-
-        kb_articles.append({
-
-            "number": meta.get("kb", ""),
-
-            "short_description": meta.get("title", "")
-
-        })
-
-# ==========================================================
-# Similar Incidents (Semantic Search Results)
-# ==========================================================
-
-retrieved = ai_response.get("retrieved_incidents", {})
-
-similar_incidents = []
-
-if retrieved:
-
-    for meta in retrieved["metadatas"][0]:
-
-        similar_incidents.append({
-
-            "number": meta.get("incident", ""),
-
-            "short_description": meta.get("short_description", "")
-
-        })
+retrieved_kb        = ai_response.get("retrieved_kb", [])
+retrieved_incidents = ai_response.get("retrieved_incidents", [])
 
 # ==========================================================
 # Layout
@@ -140,15 +109,14 @@ st.divider()
 c1, c2, c3 = st.columns(3)
 
 with c1:
-    kb_card(kb_articles)
+    kb_card(retrieved_kb)
 
 with c2:
-    similar_incidents_card(similar_incidents)
+    similar_incidents_card(retrieved_incidents)
 
 with c3:
     reasoning_card(ai_response)
 
 st.divider()
-
 
 st.caption("Powered by ServiceNow • Gemini • ChromaDB")
