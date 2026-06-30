@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import streamlit as st
 
@@ -315,3 +316,437 @@ st.divider()
 st.caption(
     "Powered by ServiceNow • Gemini • ChromaDB"
 )
+=======
+# app.py
+
+import streamlit as st
+
+# -----------------------------
+# Backend
+# -----------------------------
+from backend.service_now import (
+    get_latest_incident,
+    get_all_incidents,
+)
+
+from backend.gemini_services import generate_resolution
+from backend.history_db import initialize_database
+
+# -----------------------------
+# UI Components
+# -----------------------------
+from ui.incident_card import incident_card
+from ui.auto_resolution import auto_resolution_card
+from ui.kb_articles import kb_card
+from ui.similar_incidents import similar_incidents_card
+from ui.ui_reasoning import reasoning_card
+from ui.notification_panel import notification_panel
+
+
+# -----------------------------
+# Page Config
+# -----------------------------
+st.set_page_config(
+    page_title="AI Incident Resolution Assistant",
+    page_icon="🤖",
+    layout="wide"
+)
+
+initialize_database()
+
+
+# ==========================================================
+# Theme
+# ==========================================================
+
+THEME = {
+    "navy": "#0A0F1E",
+    "card": "#0D1B2A",
+    "card2": "#112236",
+    "border": "#1E3A5F",
+
+    "cyan": "#00E5FF",
+    "green": "#00C853",
+    "red": "#FF1744",
+    "amber": "#FFB300",
+
+    "text_high": "#E8F4FD",
+    "text_mid": "#7EA8C4",
+}
+
+
+# ==========================================================
+# CSS
+# ==========================================================
+
+
+# ==========================================================
+# Notification Panel
+# ==========================================================
+
+@st.fragment(run_every=60)
+def auto_refresh_notifications():
+    notification_panel()
+
+auto_refresh_notifications()
+
+
+st.title("🤖 AI Incident Resolution Assistant")
+st.caption("AI-powered L2 Incident Resolution")
+
+
+# ==========================================================
+# Incident List Page
+# ==========================================================
+
+if "selected_incident" not in st.session_state:
+
+    st.subheader("📋 Latest 20 Incidents")
+
+    try:
+
+        all_incidents = get_all_incidents(
+            limit=20
+        )
+
+        if not all_incidents:
+
+            st.info(
+                "No incidents found"
+            )
+
+        else:
+
+            h1,h2,h3,h4 = st.columns(
+                [2,6,2,2]
+            )
+
+            h1.markdown(
+                "**Incident**"
+            )
+
+            h2.markdown(
+                "**Description**"
+            )
+
+            h3.markdown(
+                "**Priority**"
+            )
+
+            h4.markdown(
+                "**Action**"
+            )
+
+            st.divider()
+
+            for inc in all_incidents:
+
+                c1,c2,c3,c4 = st.columns(
+                    [2,6,2,2],
+                    vertical_alignment="center"
+                )
+
+
+                # Incident Number
+
+                with c1:
+
+                    st.markdown(
+                    f"""
+                    <div class='dashboard-card'>
+                    <b>{inc['number']}</b>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                    )
+
+
+                # Description
+
+                with c2:
+
+                    desc = inc.get(
+                        "short_description",
+                        ""
+                    )
+
+                    if len(desc) > 90:
+                        desc = desc[:90] + "..."
+
+                    st.markdown(
+                    f"""
+                    <div class='dashboard-card'>
+                    {desc}
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                    )
+
+
+                # Priority Badge
+
+                with c3:
+
+                    priority = str(
+                        inc.get(
+                            "priority",
+                            "N/A"
+                        )
+                    )
+
+                    color_map = {
+
+                        "1":THEME["red"],
+                        "2":THEME["amber"],
+                        "3":THEME["green"]
+                    }
+
+                    color = color_map.get(
+                        priority,
+                        THEME["cyan"]
+                    )
+
+                    st.markdown(
+                    f"""
+                    <div style="
+                    background:{color};
+                    padding:10px;
+                    border-radius:8px;
+                    text-align:center;
+                    font-weight:bold;
+                    ">
+                    Priority {priority}
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                    )
+
+
+                # Analyze button
+
+                with c4:
+
+                    if st.button(
+                        "Analyze →",
+                        key=f"analyze_{inc['number']}",
+                        use_container_width=True
+                    ):
+
+                        st.session_state[
+                            "selected_incident"
+                        ] = inc
+
+                        st.rerun()
+
+
+                st.markdown(
+                    "<hr style='border-color:#1E3A5F'>",
+                    unsafe_allow_html=True
+                )
+
+    except Exception as e:
+
+        st.error(
+            f"Unable to fetch incidents: {e}"
+        )
+
+
+# ==========================================================
+# AI Workspace
+# ==========================================================
+
+else:
+
+    incident = st.session_state[
+        "selected_incident"
+    ]
+
+
+    # Top header
+
+    t1,t2 = st.columns(
+        [1,8]
+    )
+
+    with t1:
+
+        if st.button(
+            "⬅ Back"
+        ):
+
+            del st.session_state[
+                "selected_incident"
+            ]
+
+            st.rerun()
+
+
+    with t2:
+
+        st.markdown(
+        f"""
+        <div class='dashboard-card'>
+
+        <h4>
+        🤖 AI Analysis :
+        {incident.get('number')}
+        </h4>
+
+        {incident.get('short_description')}
+
+        </div>
+        """,
+        unsafe_allow_html=True
+        )
+
+
+    # Generate AI response
+
+    try:
+
+        ai_response = generate_resolution(
+            incident
+        )
+
+    except Exception as e:
+
+        st.error(
+            f"Gemini Error : {e}"
+        )
+
+        ai_response = {
+
+            "summary":"",
+            "root_cause":"",
+            "resolution_steps":[],
+            "confidence":0,
+            "escalation":"",
+            "kb_used":[],
+            "retrieved_kb":[],
+            "retrieved_incidents":[]
+        }
+
+
+    retrieved_kb = ai_response.get(
+        "retrieved_kb",
+        []
+    )
+
+    retrieved_incidents = ai_response.get(
+        "retrieved_incidents",
+        []
+    )
+
+
+    # Main two-column layout
+
+    left,right = st.columns(
+        [1,2],
+        gap="medium"
+    )
+
+
+    with left:
+
+        st.markdown(
+            "<div class='dashboard-card'>",
+            unsafe_allow_html=True
+        )
+
+        incident_card(
+            incident
+        )
+
+        st.markdown(
+            "</div>",
+            unsafe_allow_html=True
+        )
+
+
+    with right:
+
+        st.markdown(
+            "<div class='dashboard-card'>",
+            unsafe_allow_html=True
+        )
+
+        auto_resolution_card(
+            incident,
+            ai_response
+        )
+
+        st.markdown(
+            "</div>",
+            unsafe_allow_html=True
+        )
+
+
+    st.divider()
+
+    st.subheader(
+        "AI Supporting Information"
+    )
+
+
+    c1,c2,c3 = st.columns(
+        3
+    )
+
+
+    with c1:
+
+        st.markdown(
+            "<div class='dashboard-card'>",
+            unsafe_allow_html=True
+        )
+
+        kb_card(
+            retrieved_kb
+        )
+
+        st.markdown(
+            "</div>",
+            unsafe_allow_html=True
+        )
+
+
+    with c2:
+
+        st.markdown(
+            "<div class='dashboard-card'>",
+            unsafe_allow_html=True
+        )
+
+        similar_incidents_card(
+            retrieved_incidents
+        )
+
+        st.markdown(
+            "</div>",
+            unsafe_allow_html=True
+        )
+
+
+    # with c3:
+
+    #     st.markdown(
+    #         "<div class='dashboard-card'>",
+    #         unsafe_allow_html=True
+    #     )
+
+    #     reasoning_card(
+    #         ai_response
+    #     )
+
+    #     st.markdown(
+    #         "</div>",
+    #         unsafe_allow_html=True
+    #     )
+
+
+st.divider()
+
+st.caption(
+    "Powered by ServiceNow • Gemini • ChromaDB"
+)
+>>>>>>> e14e27d1 (ui and similar incidents changed)

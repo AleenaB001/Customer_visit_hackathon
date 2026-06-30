@@ -33,12 +33,16 @@ def similar_incidents_card(similar_incidents):
         columns = [
             "number",
             "priority",
-            "state",
             "category",
-            "short_description"
+            "short_description",
+            "score"
         ]
 
         columns = [c for c in columns if c in df.columns]
+
+        if not columns:
+            st.info("No similar incidents found.")
+            return
 
         st.dataframe(
             df[columns],

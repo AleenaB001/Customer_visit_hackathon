@@ -31,7 +31,13 @@ def format_chunks(results):
         chunks.append({
             "text":  doc,
             "score": similarity,
-            "meta":  meta
+            "meta":  meta,
+            # Flattened so UI tables (e.g. similar_incidents_card) can read
+            # these directly instead of digging into "meta".
+            "number":            meta.get("incident", meta.get("kb", "")),
+            "category":          meta.get("category", ""),
+            "priority":          meta.get("priority", ""),
+            "short_description": meta.get("short_description", meta.get("title", ""))
         })
 
     return chunks
