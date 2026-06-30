@@ -145,8 +145,8 @@ genai-l2-assistant/
 ```bash
 # 1. Clone and configure
 cd genai-l2-assistant
-cp .env.example .env
-# Edit .env with your API keys
+cp .env.example .env.example
+# Edit .env.example with your API keys
 
 # 2. Start local stack
 docker-compose up -d

@@ -2271,7 +2271,10 @@ function generateMockAnalysis() {
 }
 generateMockAnalysis();
 
-const ANALYZED_INCIDENTS = new Set(['INC0050001', 'INC0050002', 'INC0050003', 'INC0050004', 'INC0050005', 'INC0050006', 'INC0050007', 'INC0050008', 'INC0050010']);
+// In mock mode this is pre-seeded; in live mode it is cleared and repopulated
+// from the API response's ai_status field by fetchLiveIncidents().
+let ANALYZED_INCIDENTS = new Set(['INC0050001', 'INC0050002', 'INC0050003', 'INC0050004', 'INC0050005', 'INC0050006', 'INC0050007', 'INC0050008', 'INC0050010']);
+
 
 const MOCK_CHAT_RESPONSES = {
   'Likely cause?': 'Based on the analysis of this incident and historical patterns, the most likely root cause is the one identified in the AI analysis above. The confidence score reflects our certainty based on similar past incidents and the correlation between symptoms and known failure modes.',
@@ -2527,7 +2530,7 @@ function triggerAnalysis() {
   }
 
   const snow_sys_id = currentIncident ? currentIncident.snow_sys_id : '582e7b6d29eb5aeeabc987ef73e0230c';
-  
+
   fetch(API_BASE + '/incidents/analyze', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -2541,9 +2544,20 @@ function triggerAnalysis() {
     return res.json();
   })
   .then(data => {
-    if (data.status === 'completed' || data.status === 'complete' || data.root_cause_prediction) {
-      renderRecommendation(data);
+    // When the backend returns a completed inline result, render it immediately
+    if (data.status === 'completed' || data.status === 'complete') {
+      if (data.result && data.result.root_cause_prediction) {
+        renderRecommendation(data.result);
+      } else if (data.root_cause_prediction) {
+        renderRecommendation(data);
+      } else {
+        // Completed but result is separate — poll for it using recommendation_id
+        const recId = data.recommendation_id || data.id;
+        setStatus('analysing', 'Finalising…');
+        pollRecommendation(recId, 0);
+      }
     } else if (data.status === 'queued') {
+      // Celery task enqueued — recId is the Celery task ID
       const recId = data.recommendation_id || data.id;
       setStatus('analysing', 'Queued…');
       pollRecommendation(recId, 0);
@@ -2559,27 +2573,48 @@ function triggerAnalysis() {
 }
 
 function pollRecommendation(recId, attempt = 0) {
-  if (attempt > 30) {
+  if (attempt > 40) {
     showToast('Analysis timed out. Falling back to mock data.');
     const data = currentIncident ? MOCK_ANALYSIS[currentIncident.number] : MOCK_ANALYSIS['INC0050001'];
     renderRecommendation(data);
     return;
   }
-  
-  const pollUrl = API_BASE + '/recommendations/' + (currentIncident && currentIncident.id ? currentIncident.id : recId);
+
+  // Always poll using recId (the Celery task ID or recommendation UUID).
+  // Do NOT substitute currentIncident.id here — the DB incident UUID is different
+  // from the recommendation/task ID and would cause 404s on the polling endpoint.
+  const pollUrl = API_BASE + '/recommendations/' + recId;
+
   fetch(pollUrl)
     .then(res => {
+      // HTTP 202 means the backend accepted the task but it's still processing.
+      // This is a deliberate "keep polling" signal — not an error.
+      if (res.status === 202) {
+        setStatus('analysing', 'Processing…');
+        setTimeout(() => pollRecommendation(recId, attempt + 1), 3000);
+        return null; // skip the .then(data => ...) block
+      }
       if (!res.ok) throw new Error('Failed polling: ' + res.status);
       return res.json();
     })
     .then(data => {
-      if (data.status === 'completed' || data.status === 'complete' || data.root_cause_prediction) {
+      if (!data) return; // 202 path — already scheduled next poll above
+      if (data.root_cause_prediction) {
+        // Successfully received a full recommendation
         renderRecommendation(data);
+      } else if (data.status === 'completed' || data.status === 'complete') {
+        if (data.result && data.result.root_cause_prediction) {
+          renderRecommendation(data.result);
+        } else {
+          renderRecommendation(data);
+        }
       } else {
+        // Still processing — try again
         setTimeout(() => pollRecommendation(recId, attempt + 1), 3000);
       }
     })
     .catch(() => {
+      // Network error or unexpected status — retry
       setTimeout(() => pollRecommendation(recId, attempt + 1), 3000);
     });
 }
@@ -2763,9 +2798,20 @@ function sendChat(overrideMessage) {
       engineer_id: 'test-engineer-001'
     })
   })
-  .then(res => res.json())
-  .then(data => { chatSessionId = data.session_id; appendChatMsg('assistant', data.response); })
-  .catch(() => appendChatMsg('assistant', 'Sorry, I couldn\'t reach the backend. Please check the FastAPI server.'));
+  .then(async res => {
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data.detail || 'API server returned error code ' + res.status);
+    }
+    return data;
+  })
+  .then(data => { 
+    chatSessionId = data.session_id; 
+    appendChatMsg('assistant', data.response); 
+  })
+  .catch(err => {
+    appendChatMsg('assistant', 'Error: ' + err.message + ' (Did you run the AI Analysis first?)');
+  });
 }
 
 function appendChatMsg(role, content) {
@@ -3088,7 +3134,9 @@ function buildAllIncidentsTable() {
     let aiStatusBadgeStyle = 'background:var(--bg-input);color:var(--text-lo);border:1px solid var(--border);';
     
     if (isAnalyzed) {
-      const confidence = MOCK_ANALYSIS[inc.number] ? MOCK_ANALYSIS[inc.number].confidence_score : 0.85;
+      // Prefer live confidence from API response; fall back to mock analysis
+      const confidence = (inc.ai_confidence != null) ? inc.ai_confidence
+        : (MOCK_ANALYSIS[inc.number] ? MOCK_ANALYSIS[inc.number].confidence_score : 0.85);
       const score = Math.round(confidence * 100);
       if (confidence < 0.6) {
         aiStatus = '⚠ Low Confidence';
@@ -3144,7 +3192,9 @@ function buildConsoleIncidentsTable() {
     }
     
     const isAnalyzed = ANALYZED_INCIDENTS.has(inc.number);
-    const confidence = MOCK_ANALYSIS[inc.number] ? MOCK_ANALYSIS[inc.number].confidence_score : 0.85;
+    // Prefer live confidence from API response; fall back to mock analysis
+    const confidence = (inc.ai_confidence != null) ? inc.ai_confidence
+      : (MOCK_ANALYSIS[inc.number] ? MOCK_ANALYSIS[inc.number].confidence_score : 0.85);
     const isLowConfidence = isAnalyzed && confidence < 0.6;
     const isNotAnalyzed = !isAnalyzed;
     
@@ -3766,6 +3816,10 @@ function fetchLiveIncidents() {
     })
     .then(data => {
       INCIDENTS.length = 0;
+      // Clear live AI status — we will repopulate from API response
+      ANALYZED_INCIDENTS.clear();
+
+      // The server returns incidents sorted latest-to-oldest (opened_at DESC)
       data.forEach(item => {
         INCIDENTS.push({
           number: item.number,
@@ -3780,11 +3834,21 @@ function fetchLiveIncidents() {
           state: String(item.state || '1'),
           app: item.app || item.u_application || 'Other',
           openedAt: item.opened_at || item.openedAt || new Date().toISOString(),
-          resolvedAt: item.resolved_at || item.resolvedAt || null
+          resolvedAt: item.resolved_at || item.resolvedAt || null,
+          // AI status fields from the backend
+          ai_status: item.ai_status || 'not_analyzed',
+          ai_confidence: item.ai_confidence || null,
+          recommendation_id: item.recommendation_id || null,
         });
+
+        // Populate ANALYZED_INCIDENTS set so table badges render correctly
+        if (item.ai_status === 'analyzed' || item.ai_status === 'low_confidence') {
+          ANALYZED_INCIDENTS.add(item.number);
+        }
       });
+
       generateMockAnalysis();
-      showToast('✓ Loaded live incidents');
+      showToast('✓ Loaded ' + data.length + ' incidents from ServiceNow');
       updateDashboard();
     })
     .catch(err => {

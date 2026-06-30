@@ -370,10 +370,13 @@ class MockServiceNowClient:
             query_params: Filter and pagination parameters.
 
         Returns:
-            Filtered list of IncidentRecord objects.
+            Filtered list of IncidentRecord objects, sorted to match the
+            requested sort_by / sort_order (default: opened_at DESC).
         """
+        from app.models.incident import SortField, SortOrder
+
         params = query_params or IncidentQueryParams()
-        self._log.info("mock_list_incidents", limit=params.limit)
+        self._log.info("mock_list_incidents", limit=params.limit, sort_by=params.sort_by, sort_order=params.sort_order)
 
         results = list(_FIXTURE_INCIDENTS)
 
@@ -387,6 +390,20 @@ class MockServiceNowClient:
                 r for r in results
                 if params.assignment_group.lower() in r["assignment_group"].lower()
             ]
+
+        # Apply sort order (mirrors ServiceNow ORDER BY clause)
+        sort_field = params.sort_by.value  # e.g. "opened_at" or "resolved_at"
+        reverse = params.sort_order == SortOrder.DESC
+
+        def _sort_key(r: dict) -> tuple:
+            val = r.get(sort_field)
+            # Treat None as the epoch so None values sort last when DESC
+            if val is None:
+                from datetime import datetime
+                val = datetime.min
+            return (val,)
+
+        results = sorted(results, key=_sort_key, reverse=reverse)
 
         # Apply pagination
         start = params.offset
